@@ -5,20 +5,33 @@ import (
 	"testing"
 )
 
-func TestTwoSum(t *testing.T) {
-	target := 9
-	input1 := []int{2, 7, 11, 15}
-	result := TwoSum(input1, target)
+var inputs = [][]int{
+	{2, 7, 11, 15},
+	{3, 2, 4},
+	{3, 3},
+}
+var targets = []int{9, 6, 6}
 
-	fmt.Println(result)
-	if result[0] != 0 || result[1] != 1 {
-		t.Errorf("Not passed!")
+func TestTwoSum(t *testing.T) {
+	for iInput, input := range inputs {
+		target := targets[iInput]
+		res := TwoSum(input, target)
+		sum := input[res[0]] + input[res[1]]
+		if sum != target {
+			t.Errorf("Expected %d given %d", target, sum)
+		}
 	}
 
-	target = 6
-	input2 := []int{3, 2, 4}
-	result = TwoSum(input2, target)
-	if result[0] != 1 || result[1] != 2 {
-		t.Errorf("Not passed!")
+	fmt.Println(inputs, targets)
+}
+
+func TestTwoSumWithHash(t *testing.T) {
+	for iInput, input := range inputs {
+		target := targets[iInput]
+		res := TwoSumWithHash(input, target)
+		sum := input[res[0]] + input[res[1]]
+		if sum != target {
+			t.Errorf("Expected %d given %d", target, sum)
+		}
 	}
 }
