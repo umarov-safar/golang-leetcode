@@ -59,9 +59,9 @@ func TestCheckValid(t *testing.T) {
 			want: true,
 		},
 		{
-			name: "Empty matrix",
+			name:   "Empty matrix",
 			matrix: [][]int{},
-			want:  true,
+			want:   true,
 		},
 	}
 
@@ -70,6 +70,10 @@ func TestCheckValid(t *testing.T) {
 			got := CheckValid(tt.matrix)
 			if got != tt.want {
 				t.Errorf("CheckValid() = %v, want %v", got, tt.want)
+			}
+			got2 := CheckValidV2(tt.matrix)
+			if got2 != tt.want {
+				t.Errorf("CheckValidV2() = %v, want %v", got, tt.want)
 			}
 		})
 	}

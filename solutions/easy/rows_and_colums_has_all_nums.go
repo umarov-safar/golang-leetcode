@@ -21,3 +21,22 @@ func CheckValid(matrix [][]int) bool {
 
     return true
 }
+
+func CheckValidV2(matrix [][]int) bool {
+    for i, row := range matrix {
+        rowStore, colStore := [101]int{}, [101]int{}
+        
+        for j, v := range row {
+            rowStore[v]++
+            if rowStore[v] > 1 {
+                return false
+            }
+            colStore[matrix[j][i]]++
+            if colStore[matrix[j][i]] > 1 {
+                return false
+            }
+        }
+    }
+
+    return true
+}
