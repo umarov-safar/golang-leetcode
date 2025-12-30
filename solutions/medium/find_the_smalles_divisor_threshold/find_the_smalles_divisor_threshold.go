@@ -9,7 +9,7 @@ func computeSum(nums []int, divisor int) int {
     for _, num := range nums {
         sum += (num + divisor - 1) / divisor
     }
-
+    
     return sum
 }
 
