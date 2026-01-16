@@ -7,7 +7,6 @@ func sumOddLengthSubarrays(arr []int) int {
 		if i%2 != 0 {
 			continue
 		}
-
 		l, r := 0, i
 		for r < len(arr) && (r-1)-l <= i {
 			if l == 0 {
