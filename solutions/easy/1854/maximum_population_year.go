@@ -14,7 +14,7 @@ func maximumPopulation(logs [][]int) int {
 	for year, count := range years {
 		if count > mxCount {
 			earlyYear = year
-			mxCount = count
+			mxCount = count	
 		} else if count == mxCount && year < earlyYear {
 			earlyYear = year
 		}
