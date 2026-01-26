@@ -1,7 +1,6 @@
 package design
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 )
