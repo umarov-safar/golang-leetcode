@@ -17,6 +17,7 @@ func Constructor(matrix [][]int) NumMatrix {
 
 		prefixSum[i] = ps
 	}
+
 	return NumMatrix{prefixSum}
 }
 
