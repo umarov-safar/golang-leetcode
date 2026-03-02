@@ -1,8 +1,6 @@
 package main
 
-import (
-	"strings"
-)
+import "strings"
 
 func simplifyPath(path string) string {
 	paths := strings.Split(path, "/")
