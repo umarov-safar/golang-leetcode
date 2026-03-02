@@ -1,6 +1,8 @@
 package main
 
-import "strings"
+import (
+	"strings"
+)
 
 func simplifyPath(path string) string {
 	paths := strings.Split(path, "/")
@@ -9,7 +11,6 @@ func simplifyPath(path string) string {
 		if p == "" || p == "." {
 			continue
 		}
-
 		if p == ".." {
 			if len(res) > 0 {
 				res = res[:len(res)-1]
