@@ -15,6 +15,7 @@ func minimumDistance(nums []int) int {
 	}
 
 	min := math.MaxInt
+
 	for _, indices := range m {
 		if len(indices) >= 3 {
 			find := findMinDistince(indices)
