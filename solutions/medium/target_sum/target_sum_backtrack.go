@@ -4,21 +4,19 @@ package targetsum
 // Link: https://leetcode.com/problems/target-sum/description/
 
 func findTargetSumWays(nums []int, target int) int {
-	var backtrack func(i int, s int)
-	count := 0
+	var backtrack func(i int, s int) int
 	n := len(nums)
-	backtrack = func(i int, s int) {
+	backtrack = func(i int, s int) int {
 		if i == n {
 			if s == target {
-				count++
+				return 1
 			}
-			return
+			return 0
 		}
 
-		backtrack(i+1, s+nums[i])
-		backtrack(i+1, s-nums[i])
+		return backtrack(i+1, s+nums[i]) + backtrack(i+1, s-nums[i])
 	}
 
-	backtrack(0, 0)
-	return count
+	
+	return backtrack(0, 0)
 }
